@@ -1,0 +1,25 @@
+
+drop sequence prdseq;
+create sequence prdseq
+	increment by 1
+	start with 1
+	minvalue 1;
+  
+drop table product; 
+create table product(
+	p_no number primary key, 
+	name  VARCHAR2(30),
+	PRICE      NUMBER not null,
+	CATEGORY            VARCHAR2(30),  
+	PHONE_NO            NUMBER,        
+	DETAIL              VARCHAR2(300), 
+	REGIT_DATE          DATE,          
+	PW                  NUMBER);
+  
+insert into product values(prdseq.nextval,'lg그램',500000,'노트북',12345678,'lg 그램 거의 새거','21/06/21',1234);
+insert into product values(prdseq.nextval,'아이폰8',300000,'핸드폰',11115678,'아이폰8 케이스 항상 착용','21/06/11',1234);
+insert into product values(prdseq.nextval,'갤럭시s10',200000,'핸드폰',12341111,'갤럭시s10 공기계','21/06/25',1234);
+insert into product values(prdseq.nextval,'나이키 모자',20000,'모자',20004423,'나이키 모자 세탁완료','21/06/21',1234);
+insert into product values(prdseq.nextval,'이것이 자바다',10000,'책',20004423,'거의 새책입니다.','21/06/24',1234);
+
+commit;
